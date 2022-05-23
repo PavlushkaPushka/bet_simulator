@@ -3,7 +3,7 @@ const express = require('express')
 const sequelize = require('./db')
 const models = require('./models/models.js')
 const cors = require('cors') // what is cors ??
-// const router = require('./routes/index')
+const router = require('./routes/index')
 // const errorHandler = require('./middleWare/ErrorHandlingMiddleware')
 const fileUpload = require('express-fileupload')
 const path = require('path')
@@ -18,7 +18,7 @@ app.use(cors())     // что бы отпралвлять запросы с бр
 app.use(express.json())     // что бы сервер мог парсить json
 // app.use(express.static(path.resolve(__dirname, 'data', 'logo')))
 // app.use(fileUpload({}))
-// app.use('/api', router)
+app.use('/api', router)
 
 
 // app.use(errorHandler) // мидлвэйр который пробрасывает ошибки должен идти в самом конце
